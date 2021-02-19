@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 class StringAdapter(var stringList : List<String>) : RecyclerView.Adapter<StringAdapter.StringViewHolder>()  {
 
-    class StringViewHolder(root: View, var textView: TextView) : RecyclerView.ViewHolder(root)
+    class StringViewHolder(root: View, var textView: TextView, twTextRandom: TextView) : RecyclerView.ViewHolder(root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StringViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         val twTextView = view.findViewById<TextView>(R.id.textView)
-        return StringViewHolder(view, twTextView)
+        val twTextRandom = view.findViewById<TextView>(R.id.textRandom)
+        return StringViewHolder(view, twTextView, twTextRandom)
     }
 
     override fun getItemCount(): Int {
@@ -22,7 +23,7 @@ class StringAdapter(var stringList : List<String>) : RecyclerView.Adapter<String
 
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
         holder.textView.text = stringList[position]
-        holder.textView.textTextView2 = stringList[position]
+        holder.textView.twTextRandom = stringList[position]
     }
 }
 
