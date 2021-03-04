@@ -13,7 +13,7 @@ class StringAdapter(var stringList : List<String>) : RecyclerView.Adapter<String
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StringViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         val twTextView = view.findViewById<TextView>(R.id.textView)
-        val twTextRandom = view.findViewById<TextView>(R.id.textRandom)
+        val twTextRandom = view.findViewById<TextView>(R.id.textView2)
         return StringViewHolder(view, twTextView, twTextRandom)
     }
 
